@@ -142,4 +142,3 @@ markdown
 - **Optional Testing**: Local testing steps for verifying the API.
 - **Tekton Pipeline Deployment**: Clear instructions for deploying and running the Tekton pipeline.
 
-Let me know if you need further adjustments!
