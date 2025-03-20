@@ -1,38 +1,32 @@
-# CI/CD Tools and Practices Final Project Template
+# Tekton CI/CD Pipeline Project
 
-This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
+## Overview
 
-## Usage
+This project leverages Tekton for CI/CD pipeline automation, focusing on deploying and testing a simple counter API service written in Python with Flask. The service exposes various REST API endpoints to manage counters, such as creating, reading, updating, and deleting counters. The Tekton pipeline automates tasks like testing, linting, and cleaning up the workspace, all integrated into a GitHub-based CI workflow.
 
-This repository is to be used as a template to create your own repository in your own GitHub account. No need to Fork it as it has been set up as a Template. This will avoid confusion when making Pull Requests in the future.
+### Components
 
-From the GitHub **Code** page, press the green **Use this template** button to create your own repository from this template.
+- **Dockerfile**: Builds the Python environment and sets up the necessary dependencies for the API service.
+- **API Service (`routes.py`)**: Implements RESTful endpoints for counter operations.
+- **Tests (`test_routes.py`)**: Provides unit tests for the API using `unittest` and `nose`.
+- **Tekton Tasks (`tasks.yml`)**: Defines steps for cleaning up the workspace and running tests.
+- **Setup Script (`setup.sh`)**: Automates the setup of the project environment.
+- **Tekton Pipeline (`workflow.yml`)**: Automates the CI/CD process with Tekton, triggering on push or pull requests.
 
-Name your repo: `ci-cd-final-project`.
+## Requirements
 
-## Setup
+- Tekton installed on your Kubernetes cluster.
+- Python 3.9 or later.
+- Docker to build and run the container.
+- A Kubernetes environment to deploy the pipeline and test its steps.
+- GitHub repository for version control.
 
-After entering the lab environment you will need to run the `setup.sh` script in the `./bin` folder to install the prerequisite software.
+## How to Run the Project
+
+### 1. Clone the Repository
+
+First, clone the repository to your local machine:
 
 ```bash
-bash bin/setup.sh
-```
-
-Then you must exit the shell and start a new one for the Python virtual environment to be activated.
-
-```bash
-exit
-```
-
-## Tasks
-
-
-## License
-
-Licensed under the Apache License. See [LICENSE](/LICENSE)
-
-## Author
-
-Skills Network
-
-## <h3 align="center"> © IBM Corporation 2023. All rights reserved. <h3/>
+git clone https://github.com/your-username/tekton-ci-cd-project.git
+cd tekton-ci-cd-project
